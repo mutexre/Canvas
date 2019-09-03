@@ -141,7 +141,7 @@ extension Canvas {
      *                      *
      ************************/
     
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self._currentCanvasLayer >= self._canvasLayers.count { return }
         let currLayer = self._canvasLayers[self._currentCanvasLayer]
         guard let touch = touches.first else { return }
@@ -182,7 +182,7 @@ extension Canvas {
         self.delegate?.willBeginDrawing(on: self)
     }
     
-    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self._currentCanvasLayer >= self._canvasLayers.count { return }
         let currLayer = self._canvasLayers[self._currentCanvasLayer]
         guard let touch = touches.first else { return }
@@ -359,7 +359,7 @@ extension Canvas {
         self.delegate?.isDrawing(on: self)
     }
     
-    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self._currentCanvasLayer >= self._canvasLayers.count { return }
         let currLayer = self._canvasLayers[self._currentCanvasLayer]
         guard let allTouches = event?.allTouches else { return }
@@ -384,7 +384,7 @@ extension Canvas {
         }
     }
     
-    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self._currentCanvasLayer >= self._canvasLayers.count { return }
         let currLayer = self._canvasLayers[self._currentCanvasLayer]
         guard let allTouches = event?.allTouches else { return }
