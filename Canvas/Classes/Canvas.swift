@@ -8,7 +8,7 @@
 import Foundation
 
 /** An area of the screen that allows drawing. */
-public class Canvas: UIView {
+open class Canvas: UIView {
     
     /************************
      *                      *
@@ -340,7 +340,7 @@ public class Canvas: UIView {
      *                      *
      ************************/
     
-    public override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         // 1.) Clear all sublayers.
         layer.sublayers = []
         
